@@ -19,3 +19,41 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+
+
+
+# Web client 
+# dependencies
+/web-client/node_modules
+/web-client/.pnp
+/web-client/.pnp.js
+
+# testing
+/web-client/coverage
+
+# next.js
+/web-client/.next/
+/web-client/out/
+
+# production
+/web-client/build
+
+# misc
+/web-client/.DS_Store
+/web-client/*.pem
+
+# debug
+/web-client/npm-debug.log*
+/web-client/yarn-debug.log*
+/web-client/yarn-error.log*
+/web-client/.pnpm-debug.log*
+
+# local env files
+/web-client/.env*.local
+
+# vercel
+/web-client/.vercel
+
+# typescript
+/web-client/*.tsbuildinfo
+/web-client/next-env.d.ts
