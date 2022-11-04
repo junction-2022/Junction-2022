@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 
     # demo add
     'rest_framework',
-    'backend',
 ]
 
 MIDDLEWARE = [
