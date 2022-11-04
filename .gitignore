@@ -62,4 +62,8 @@ doc/api/
 *.log
 local_settings.py
 db.sqlite3
+EMOlater/db.sqlite3
 db.sqlite3-journal
+
+#PyCharm bs
+*.idea
