@@ -17,7 +17,7 @@ class SurveyRepsponse(models.Model):
     health = models.IntegerField()
     mood = models.IntegerField()
 
-class User(models.Model)
+class User(models.Model):
     user_ID = models.IntegerField()
     user_name = models.CharField(max_length=50)
     user_password = models.CharField(max_length=50)
