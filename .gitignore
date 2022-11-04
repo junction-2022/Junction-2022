@@ -1,4 +1,6 @@
-# See https://www.dartlang.org/guides/libraries/private-files
+# general python
+__pycache__/
+.py[cod]
 
 # Files and directories created by pub
 .dart_tool/
@@ -19,8 +21,6 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
-
-
 
 # Web client 
 # dependencies
@@ -57,3 +57,9 @@ doc/api/
 # typescript
 /web-client/*.tsbuildinfo
 /web-client/next-env.d.ts
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
