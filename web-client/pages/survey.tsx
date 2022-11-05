@@ -76,7 +76,6 @@ interface DataModel {
 }
 
 const postForm = (data: DataModel): Promise<DataModel> => {
-    console.log('Send request')
     return axios.post('http://10.100.27.14:8000/api/survey/', {
         name: data.name,
         family: data.family,
@@ -295,6 +294,7 @@ export default function Survey() {
                         </Button>
                         {questionIndex === questions.length - 1 ? (
                             <Button
+                                colorScheme="yellow"
                                 onClick={() => {
                                     postForm({
                                         name: 'user',

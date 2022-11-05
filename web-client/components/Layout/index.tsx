@@ -36,7 +36,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
                             <Text fontWeight={'bold'}>Emotion</Text>
                         </Box>
                     </Link>
-                    <Avatar size={'sm'}></Avatar>
+                    <Avatar src='/avatar.png' size={'sm'}></Avatar>
                 </Box>
             </Box>
             <Box>{children}</Box>
