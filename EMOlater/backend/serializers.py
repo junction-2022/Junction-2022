@@ -13,8 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
 class SurveyRepsponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = SurveyRepsponse
-        fields = ['body',
-                  'user_id',
+        fields = ['user_id',
                   'timestamp',
                   'family',
                   'partner',
