@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "backend.apps.BackendConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
 
     # demo add
     'rest_framework',
+    'backend.apps.BackendConfig',
 ]
 
 MIDDLEWARE = [
