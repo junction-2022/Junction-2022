@@ -21,7 +21,7 @@ const SurveyCard = () => {
             <LinkButton
                 colorTheme="yellow"
                 href="/survey"
-                text="Tell us about your mood"
+                text="Tell us about your day"
             />
         </Box>
     )
