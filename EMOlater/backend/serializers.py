@@ -1,18 +1,10 @@
 from rest_framework import serializers
-from .models import SurveyRepsponse, User
-
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['user_name',
-                  'user_password']
-
+from .models import SurveyRepsponse
 
 class SurveyRepsponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = SurveyRepsponse
-        fields = ['user_name',
+        fields = ['name',
                   'timestamp',
                   'family',
                   'partner',
