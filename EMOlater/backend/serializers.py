@@ -13,8 +13,10 @@ class SurveyRepsponseSerializer(serializers.ModelSerializer):
                   'weather',
                   'sleep',
                   'work',
+                  'study',
                   'sports',
                   'hobbies',
                   'social',
                   'health',
-                  'mood']
+                  'mood',
+                  'thoughts']
