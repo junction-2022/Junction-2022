@@ -1,10 +1,13 @@
+import { Text, Box, Image } from '@chakra-ui/react'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import LinkButton from '../components/LinkButton'
+import { useSelector } from 'react-redux'
+import { selectConfigState } from '../store/configSlice'
 
 export default function Home() {
+    const configState = useSelector(selectConfigState)
     return (
-        <div className={styles.container}>
+        <Box display="flex" alignItems="center" justifyContent="center">
             <Head>
                 <title>Create Next App</title>
                 <meta
@@ -14,7 +17,66 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <h1>App Content</h1>
-        </div>
+            <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="space-between"
+                gap={20}
+                marginTop={10}
+            >
+                <Box>
+                    {configState ? (
+                        <Box
+                            display={'flex'}
+                            flexDirection={'column'}
+                            gap={6}
+                            alignItems={'center'}
+                            padding={8}
+                            paddingTop={8}
+                            paddingBottom={8}
+                            boxShadow="xs"
+                            backgroundColor={'#fafafa'}
+                            borderRadius={12}
+                            maxWidth={340}
+                        >
+                            <Image
+                                src="/trophy.png"
+                                alt={'trophy'}
+                                maxHeight={160}
+                            />
+                            <Text fontWeight={'medium'} align={'center'}>
+                                <strong>You</strong> have completed the survey.
+                                Great work towards you mental wellbeing! 🎉
+                            </Text>
+                        </Box>
+                    ) : (
+                        <Box
+                            display={'flex'}
+                            flexDirection={'column'}
+                            gap={6}
+                            alignItems={'center'}
+                            padding={6}
+                            boxShadow="xs"
+                            backgroundColor={'#fafafa'}
+                            borderRadius={12}
+                        >
+                            <Image
+                                src="/smiling-face.png"
+                                alt={'smiling face'}
+                                maxHeight={120}
+                            />
+                            <LinkButton
+                                colorTheme="yellow"
+                                href="/survey"
+                                text="Tell us about your mood"
+                            />
+                        </Box>
+                    )}
+                </Box>
+                <Box>
+                    <Text fontSize="4xl">Dashboard placeholder</Text>
+                </Box>
+            </Box>
+        </Box>
     )
 }
