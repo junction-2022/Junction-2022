@@ -1,9 +1,9 @@
 from django.db import models
-import datetime
+from datetime import datetime
 
 class SurveyRepsponse(models.Model):
     name = models.CharField(max_length=20)
-    timestamp = models.DateField(default=datetime.date.today())
+    timestamp = models.DateTimeField(default=datetime.now())
     family = models.BooleanField(default=False)
     partner = models.BooleanField(default=False)
     friends = models.BooleanField(default=False)
