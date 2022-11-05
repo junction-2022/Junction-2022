@@ -10,5 +10,7 @@ router.register(r'all_survey_repsponses', SurveyRepsponseViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('survey/', survey)
+    path('survey/', survey),
+    path('col/', col),
+    path('col4/', col4)
 ]
