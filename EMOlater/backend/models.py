@@ -2,7 +2,7 @@ from django.db import models
 
 class SurveyRepsponse(models.Model):
     user_id = models.IntegerField()
-    timestamp = models.DateField()
+    timestamp = models.DateField(auto_now=True)
     family = models.BooleanField(default=False)
     partner = models.BooleanField(default=False)
     friends = models.BooleanField(default=False)
