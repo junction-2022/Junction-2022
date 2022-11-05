@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -30,4 +32,33 @@ def survey(request):
             responses = SurveyRepsponse.objects.filter(name=name)
             return Response(SurveyRepsponseSerializer(list(responses), many=True).data, status=status.HTTP_200_OK)
         else:
-            return Response(SurveyRepsponseSerializer(SurveyRepsponse.objects.all().last()).data)
+            responses = SurveyRepsponse.objects.all()
+            return Response(SurveyRepsponseSerializer(list(responses), many=True).data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def col(request):
+    col = request.query_params.get('col', None)
+    if col:
+        tupleList = list(SurveyRepsponse.objects.values_list('timestamp', col))
+        res = []
+        for e in tupleList:
+            res.append((int(round(e[0].timestamp())), e[1]))
+        return Response(res[-30:])
+
+@api_view(['GET'])
+def col4(request):
+    tupleList = list(SurveyRepsponse.objects.values_list('timestamp', 'sleep', 'mood', 'work', 'study'))
+    res = []
+    for e in tupleList:
+        res.append(
+            {
+                "timestamp": (round(e[0].timestamp())),
+                "sleep": e[1],
+                "mood": e[2],
+                "work": e[3],
+                "study": e[4]
+             }
+        )
+    return Response(res[-30:])
+
+
