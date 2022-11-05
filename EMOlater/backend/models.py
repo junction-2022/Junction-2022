@@ -1,7 +1,7 @@
 from django.db import models
 
 class SurveyRepsponse(models.Model):
-    user_id = models.IntegerField()
+    user_name = models.IntegerField()
     timestamp = models.DateField(auto_now=True)
     family = models.BooleanField(default=False)
     partner = models.BooleanField(default=False)
@@ -17,6 +17,5 @@ class SurveyRepsponse(models.Model):
     mood = models.IntegerField()
 
 class User(models.Model):
-    user_ID = models.IntegerField()
     user_name = models.CharField(max_length=50)
     user_password = models.CharField(max_length=50)
