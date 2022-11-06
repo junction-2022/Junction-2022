@@ -12,5 +12,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('survey/', survey),
     path('col/', col),
-    path('col4/', col4)
+    path('col4/', col4),
+    path('col4n/', col4n)
 ]

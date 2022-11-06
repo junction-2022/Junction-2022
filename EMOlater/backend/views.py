@@ -61,4 +61,18 @@ def col4(request):
         )
     return Response(res[-30:])
 
-
+@api_view(['GET'])
+def col4n(request):
+    tupleList = list(SurveyRepsponse.objects.values_list('timestamp', 'mood', 'health', 'weather', 'sports'))
+    res = []
+    for e in tupleList:
+        res.append(
+            {
+                "timestamp": (round(e[0].timestamp())),
+                "mood": e[1],
+                "health": e[2],
+                "weather": e[3],
+                "sports": e[4]
+            }
+        )
+    return Response(res[-30:])
